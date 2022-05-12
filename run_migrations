@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+#Directorio donde estan todos los sub-proyectos con migraciones
+CURRENT_DIR=$(pwd)
+
+echo "Directorio de proyectos con migraciones: $CURRENT_DIR"
+
+# funcion para ejecutar todo el proceso de migraciones
+execute_migrations() #parametro "$1" es el nombre del directorio del sub-proyecto que contiene las migraciones a ejecutar
+{
+  echo "Ejecutando migraciones de $1"
+  #1- Ingresa a la carpeta de las migraciones pasada como parametro $1
+  cd "$CURRENT_DIR/$1"
+  #2- Ejecuta las migraciones pendientes
+  dbmate up
+}
+
+#payments
+execute_migrations 'test-executor'

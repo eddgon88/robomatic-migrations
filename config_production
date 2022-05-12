@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+USER_DB=USUARIO_AQUI
+PASS_DB=CLAVE_AQUI
+HOST_DB=HOST_AQUI
+PORT_DB=PUERTO_AQUI
+
+#test-executor
+CONN="postgres://$USER_DB:$PASS_DB@$HOST_DB:$PORT_DB/test_executor?sslmode=disable"
+echo "Configurando db para test-executor"
+echo "DATABASE_URL=\"$CONN\"" > ./test-executor/.env

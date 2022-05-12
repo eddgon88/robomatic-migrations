@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+USER_DB=robomatic
+PASS_DB=robomatic
+HOST_DB=localhost
+PORT_DB=5432
+
+#test-executor
+CONN="postgres://$USER_DB:$PASS_DB@$HOST_DB:$PORT_DB/test_executor?sslmode=disable"
+echo "DATABASE_URL=\"$CONN\"" > ./test-executor/.env
+cat ./test-executor/.env
