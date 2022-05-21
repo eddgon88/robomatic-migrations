@@ -9,3 +9,8 @@ PORT_DB=5432
 CONN="postgres://$USER_DB:$PASS_DB@$HOST_DB:$PORT_DB/test_executor?sslmode=disable"
 echo "DATABASE_URL=\"$CONN\"" > ./test-executor/.env
 cat ./test-executor/.env
+
+#core
+CONN="postgres://$USER_DB:$PASS_DB@$HOST_DB:$PORT_DB/core?sslmode=disable"
+echo "DATABASE_URL=\"$CONN\"" > ./core/.env
+cat ./core/.env

@@ -3,3 +3,7 @@
 #test-executor
 echo "Configurando db para test-executor"
 echo "DATABASE_URL=postgres://${USER}:${PASS}@${BD_IP}:${BD_PUERTO}/test_executor?sslmode=disable" > ./test-executor/.env
+
+#core
+echo "Configurando db para core"
+echo "DATABASE_URL=postgres://${USER}:${PASS}@${BD_IP}:${BD_PUERTO}/core?sslmode=disable" > ./core/.env

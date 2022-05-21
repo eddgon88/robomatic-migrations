@@ -7,5 +7,10 @@ PORT_DB=5432
 
 #test-executor
 CONN="postgres://$USER_DB:$PASS_DB@$HOST_DB:$PORT_DB/test_executor?sslmode=disable"
-echo "DATABASE_URL=\"$CONN\"" > ./payments/.env
+echo "DATABASE_URL=\"$CONN\"" > ./test-executor/.env
 cat ./test-executor/.env
+
+#core
+CONN="postgres://$USER_DB:$PASS_DB@$HOST_DB:$PORT_DB/core?sslmode=disable"
+echo "DATABASE_URL=\"$CONN\"" > ./core/.env
+cat ./core/.env

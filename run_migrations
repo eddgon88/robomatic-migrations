@@ -15,5 +15,8 @@ execute_migrations() #parametro "$1" es el nombre del directorio del sub-proyect
   dbmate up
 }
 
-#payments
+#test-executor
 execute_migrations 'test-executor'
+
+#core
+execute_migrations 'core'

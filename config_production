@@ -9,3 +9,8 @@ PORT_DB=PUERTO_AQUI
 CONN="postgres://$USER_DB:$PASS_DB@$HOST_DB:$PORT_DB/test_executor?sslmode=disable"
 echo "Configurando db para test-executor"
 echo "DATABASE_URL=\"$CONN\"" > ./test-executor/.env
+
+#core
+CONN="postgres://$USER_DB:$PASS_DB@$HOST_DB:$PORT_DB/core?sslmode=disable"
+echo "Configurando db para core"
+echo "DATABASE_URL=\"$CONN\"" > ./core/.env
