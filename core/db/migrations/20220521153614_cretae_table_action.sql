@@ -1,9 +1,10 @@
 -- migrate:up
 CREATE TABLE "core"."action" (
+    "id" bigserial PRIMARY KEY,
     "user_from" int4 NOT NULL,
     "user_to" int4,
     "action_id" int4 NOT NULL,
-    "date" timestamp(6) NOT NULL,
+    "date" timestamp(6) NOT NULL DEFAULT now(),
     "folder_id" int4,
     "test_id" int4,
     "test_execution_id" int4

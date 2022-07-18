@@ -5,6 +5,8 @@ CREATE TABLE "core"."user" (
     "role_id" int4 NOT NULL,
     "phone"  varchar(100),
     "email" varchar(1000) NOT NULL,
+    "pass" varchar(16) NOT NULL,
+    "enabled" boolean NOT NULL DEFAULT TRUE,
     UNIQUE(email)
 );
 
@@ -14,6 +16,7 @@ COMMENT ON COLUMN core.user.full_name IS 'nombre del usuario';
 COMMENT ON COLUMN core.user.role_id IS 'rol del usuario';
 COMMENT ON COLUMN core.user.phone IS 'numero de telefono del usuario';
 COMMENT ON COLUMN core.user.email IS 'email del usuario';
+COMMENT ON COLUMN core.user.pass IS 'contraseña del usuario';
 
 CREATE UNIQUE INDEX email_idx ON "core"."user" (email);
 

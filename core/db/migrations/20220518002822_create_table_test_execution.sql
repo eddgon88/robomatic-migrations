@@ -4,7 +4,7 @@ CREATE TABLE "core"."test_execution" (
     "test_execution_id" varchar(100) NOT NULL,
     "test_id" int4 NOT NULL,
     "test_results_dir" varchar(1000) NOT NULL,
-    "status" varchar(50) NOT NULL,    
+    "status" int4 NOT NULL,    
     UNIQUE(test_execution_id)  
 );
 
