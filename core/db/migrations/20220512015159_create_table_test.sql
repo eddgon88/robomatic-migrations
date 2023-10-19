@@ -7,6 +7,7 @@ CREATE TABLE "core"."test" (
     "script" text NOT NULL,
     "web" boolean NOT NULL DEFAULT FALSE,
     "folder_id" int4 NOT NULL,
+    "description" text,
     UNIQUE(test_id)
 );
 
