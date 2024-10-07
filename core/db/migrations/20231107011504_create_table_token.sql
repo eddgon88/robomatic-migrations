@@ -19,7 +19,7 @@ CREATE UNIQUE INDEX token_status_name ON "core"."token_status" (name);
 
 CREATE TABLE "core"."token" (
     "id" bigserial PRIMARY KEY,
-    "token" varchar(20) NOT NULL,
+    "token" varchar(100) NOT NULL,
     "status" int4 NOT NULL,
     "user_id" int4 NOT NULL,
     "creation_date" timestamp(6) NOT NULL DEFAULT now(),

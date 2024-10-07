@@ -18,3 +18,4 @@ RUN rm /migrations/.drone.yml
 WORKDIR /migrations
 
 RUN sh config_docker
+RUN sh run_migrations

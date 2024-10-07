@@ -9,15 +9,15 @@ echo "Directorio de proyectos con migraciones: $CURRENT_DIR"
 execute_migrations() #parametro "$1" es el nombre del directorio del sub-proyecto que contiene las migraciones a ejecutar
 {
   echo "Ejecutando migraciones de $1"
-  echo "$CURRENT_DIR/$1"
+  echo "$1"
   #1- Ingresa a la carpeta de las migraciones pasada como parametro $1
-  cd "$CURRENT_DIR/$1"
+  cd "$1"
   #2- Ejecuta las migraciones pendientes
   dbmate up
 }
 
 #test-executor
-execute_migrations 'test-executor'
+execute_migrations '/db/migrations/test-executor'
 
 #core
-execute_migrations 'core'
+execute_migrations '/db/migrations/core'

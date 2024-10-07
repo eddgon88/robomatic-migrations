@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+#get name of the current directory
+NAME=$(basename "$PWD")
+
+#run the docker
+docker run --name $NAME --network robomatic -p 5432:5432 -e POSTGRES_USER=robomatic -e POSTGRES_PASSWORD=robomatic -v /home/edgar/robomatic/postgresql/data:/var/lib/postgresql/data postgres:9.6

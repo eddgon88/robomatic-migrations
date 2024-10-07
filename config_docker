@@ -2,15 +2,15 @@
 
 USER_DB=robomatic
 PASS_DB=robomatic
-HOST_DB=db
+HOST_DB=docker-postgresql
 PORT_DB=5432
 
 #test-executor
 CONN="postgres://$USER_DB:$PASS_DB@$HOST_DB:$PORT_DB/test_executor?sslmode=disable"
-echo "DATABASE_URL=\"$CONN\"" > ./test-executor/.env
-cat ./test-executor/.env
+echo "DATABASE_URL=\"$CONN\"" > /db/migrations/test-executor/.env
+cat /db/migrations/test-executor/.env
 
 #core
 CONN="postgres://$USER_DB:$PASS_DB@$HOST_DB:$PORT_DB/core?sslmode=disable"
-echo "DATABASE_URL=\"$CONN\"" > ./core/.env
-cat ./core/.env
+echo "DATABASE_URL=\"$CONN\"" > /db/migrations/core/.env
+cat /db/migrations/core/.env
