@@ -35,6 +35,17 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
+-- Name: apscheduler_jobs; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.apscheduler_jobs (
+    id character varying(191) NOT NULL,
+    next_run_time double precision,
+    job_state bytea NOT NULL
+);
+
+
+--
 -- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -359,6 +370,14 @@ ALTER TABLE ONLY test_executor.test_port ALTER COLUMN id SET DEFAULT nextval('te
 
 
 --
+-- Name: apscheduler_jobs apscheduler_jobs_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.apscheduler_jobs
+    ADD CONSTRAINT apscheduler_jobs_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: schema_migrations schema_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -412,6 +431,13 @@ ALTER TABLE ONLY test_executor.stop_execution
 
 ALTER TABLE ONLY test_executor.test_port
     ADD CONSTRAINT test_port_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: ix_apscheduler_jobs_next_run_time; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX ix_apscheduler_jobs_next_run_time ON public.apscheduler_jobs USING btree (next_run_time);
 
 
 --
