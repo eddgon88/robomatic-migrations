@@ -21,3 +21,6 @@ execute_migrations 'test-executor'
 
 #core
 execute_migrations 'core'
+
+#n8n
+execute_migrations 'n8n'

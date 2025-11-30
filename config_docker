@@ -14,3 +14,8 @@ cat /db/migrations/test-executor/.env
 CONN="postgres://$USER_DB:$PASS_DB@$HOST_DB:$PORT_DB/core?sslmode=disable"
 echo "DATABASE_URL=\"$CONN\"" > /db/migrations/core/.env
 cat /db/migrations/core/.env
+
+#n8n
+CONN="postgres://$USER_DB:$PASS_DB@$HOST_DB:$PORT_DB/n8n?sslmode=disable"
+echo "DATABASE_URL=\"$CONN\"" > /db/migrations/n8n/.env
+cat /db/migrations/n8n/.env

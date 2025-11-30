@@ -21,3 +21,6 @@ execute_migrations '/db/migrations/test-executor'
 
 #core
 execute_migrations '/db/migrations/core'
+
+#n8n
+execute_migrations '/db/migrations/n8n'

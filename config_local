@@ -14,3 +14,8 @@ cat ./test-executor/.env
 CONN="postgres://$USER_DB:$PASS_DB@$HOST_DB:$PORT_DB/core?sslmode=disable"
 echo "DATABASE_URL=\"$CONN\"" > ./core/.env
 cat ./core/.env
+
+#n8n
+CONN="postgres://$USER_DB:$PASS_DB@$HOST_DB:$PORT_DB/n8n?sslmode=disable"
+echo "DATABASE_URL=\"$CONN\"" > ./n8n/.env
+cat ./n8n/.env
