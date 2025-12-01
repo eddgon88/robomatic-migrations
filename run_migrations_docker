@@ -3,7 +3,37 @@
 #Directorio donde estan todos los sub-proyectos con migraciones
 CURRENT_DIR=$(pwd)
 
+echo "=========================================="
+echo "  ROBOMATIC - Ejecución de Migraciones (Docker)"
+echo "=========================================="
+echo ""
 echo "Directorio de proyectos con migraciones: $CURRENT_DIR"
+echo ""
+
+# Colores para output
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+
+# ============================================
+# PASO 1: Backup automático antes de migraciones
+# ============================================
+echo -e "${YELLOW}PASO 1: Creando backup de seguridad...${NC}"
+echo ""
+
+# En Docker, el script de backup debe estar en el mismo directorio
+if [ -f "/db/migrations/auto_backup_db.sh" ]; then
+    bash "/db/migrations/auto_backup_db.sh" "pre-migration-docker"
+    echo ""
+else
+    echo -e "${RED}⚠️  Advertencia: No se encontró auto_backup_db.sh${NC}"
+    echo "Continuando sin backup..."
+    echo ""
+fi
+
+echo -e "${YELLOW}PASO 2: Ejecutando migraciones...${NC}"
+echo ""
 
 # funcion para ejecutar todo el proceso de migraciones
 execute_migrations() #parametro "$1" es el nombre del directorio del sub-proyecto que contiene las migraciones a ejecutar
@@ -24,3 +54,9 @@ execute_migrations '/db/migrations/core'
 
 #n8n
 execute_migrations '/db/migrations/n8n'
+
+echo ""
+echo -e "${GREEN}=========================================="
+echo "  ✓ Migraciones completadas exitosamente"
+echo "==========================================${NC}"
+echo ""
